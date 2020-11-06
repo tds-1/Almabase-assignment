@@ -24,7 +24,7 @@ class core:
         topMCommitteesDict = {}
         pageNum=1
         while(True):     #The result can consist of multiple pages, we loop until we reach the last page of our search
-            request = requests.get(apiPrefix+'users/'+orgName+'/repos'+queryString+str(pageNum))
+            request = requests.get(apiPrefix+'orgs/'+orgName+'/repos'+queryString+str(pageNum))
             json = request.json()
             if(len(json) == 0):        #if there is no repo in json, it means that we have iterated over all the repos
                 break
