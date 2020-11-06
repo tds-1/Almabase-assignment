@@ -1,4 +1,4 @@
-# Tweepy Twitter Api
+# Almabase Assignment
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1ac554483fac462797ffa5a8b9adf2fa?style=flat-square)]()
 [![Build Status](https://api.travis-ci.org/fossasia/badgeyay.svg?branch=development&style=flat-square)]()
 
@@ -60,3 +60,5 @@ python manage.py runserver
 ![alt text](https://github.com/tds-1/Almabase-assignment/blob/master/images/repo.png)
 - List of top committees.
 ![alt text](https://github.com/tds-1/Almabase-assignment/blob/master/images/users.png)
+
+## Note: Heroku wouldn't work with big values of n and m.
