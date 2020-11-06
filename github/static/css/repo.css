@@ -5,6 +5,12 @@ body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     animation: gradient 10s ease infinite;
   }
+  .container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0px;
+    position: relative;
+}
     
   .github-cards {
     display: flex;
