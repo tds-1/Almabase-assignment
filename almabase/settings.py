@@ -136,7 +136,7 @@ STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'twitter_auth/static'),
+    os.path.join(BASE_DIR, 'github/static'),
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
