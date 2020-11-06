@@ -34,12 +34,10 @@ class core:
         
         repoList.sort(reverse=True)
 
-        repoCount = 0
-        while(repoCount<min(N,len(repoList))):    
-            forkCount,repoName,star,language = repoList[repoCount]
+        for count in range(0,min(N,len(repoList))):
+            forkCount,repoName,star,language = repoList[count]
             topNRepoDict[repoName] = (forkCount,star,language)     
             topMCommitteesDict[repoName] = []      
-            repoCount+=1
 
         for repo in topMCommitteesDict:
             committeesList = [] 
@@ -55,10 +53,9 @@ class core:
                 pageNum+=1
 
             committeesList.sort(reverse=True)
-            contributorCount = 0
-            while(contributorCount<min(M,len(committeesList))): 
-                contributionCount,contributorName,avtar,url=committeesList[contributorCount]
+            
+            for count in range(0,min(M,len(committeesList))):
+                contributionCount,contributorName,avtar,url=committeesList[count]
                 topMCommitteesDict[repo].append((contributorName,contributionCount,avtar,url))
-                contributorCount+=1
 
         return (topNRepoDict,topMCommitteesDict)
