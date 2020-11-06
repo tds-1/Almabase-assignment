@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/repo.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<title>Repository</title>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <h1>Top {{topNRepoDict|length}} GitHub repository of {{organisation}}</h1>
+    <p>Click on the repo to view more about the repository.</p>
+    {% for repo, value in topNRepoDict.items %}
+
+    <div class="github-cards">
+        <a href="/{{repo}}/top-commits" class="github-card">
+            <h3>{{repo}}</h3>
+            <!-- <p>Nexmo REST API client for Ruby</p> -->
+            <span class="github-card__meta">
+                <span class="github-card__language-icon" style="color: #7A0410;">●</span> {{value.2}}
+            </span>
+            <span class="github-card__meta">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                {{value.1}}
+            </span>
+            <span class="github-card__meta">
+                <i class="fa fa-code-fork" aria-hidden="true"></i>
+                {{value.0}}
+            </span>
+        </a>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

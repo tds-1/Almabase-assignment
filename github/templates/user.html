@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/user.css">
+<title>Top Users</title>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <h1>Top {{userlist|length}} Profile with most commits in {{repo}}</h1>
+    {% for user in userlist %}
+    <div class="grid-7 element-animation">
+        <!--card-1-->
+        <div class="card color-card">
+            <img src="{{user.2}}" alt="profile-pic" class="profile">
+            <h1 class="title">{{user.0}}</h1>
+            <p class="job-title"> Commits: {{user.1}}</p>
+            <a href="{{user.3}}">
+                <button class="btn color-a top"> View porfile</button>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+
+{% endblock %}
